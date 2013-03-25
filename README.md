@@ -1,6 +1,6 @@
 # Carrierwave::Viewer
 
-TODO: Write a gem description
+Carrierwave integration with GroupDocs service
 
 ## Installation
 
@@ -16,9 +16,22 @@ Or install it yourself as:
 
     $ gem install carrierwave-viewer
 
+Add groupdocs_guid column to your mounted model:
+
+    add_column :uploads, :groupdocs_guid, :string
+
 ## Usage
 
-TODO: Write usage instructions here
+    CarrierWave.configure do |config|
+      config.groupdocs_client_id   = 'YOUR_CLIENT_ID'
+      config.groupdocs_private_key = 'YOUR_PRIVATE_KEY'
+    end
+
+    class MyAwesomeUploader < CarrierWave::Uploader::Base
+      include CarrierWave::Viewer
+    ...
+
+Once your file will be stored via CarrierWave, it will be stored in GroupDocs too and you'll get 'guid' for this file to display its GroupDocs preview.
 
 ## Contributing
 
