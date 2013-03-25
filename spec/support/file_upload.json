@@ -1,0 +1,9 @@
+{
+    "status": "Ok",
+    "result":
+        {
+            "adj_name": "File.pdf",
+            "guid": "123abc",
+            "type": "Words"
+        }
+}
