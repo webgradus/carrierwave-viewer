@@ -20,6 +20,10 @@ Add groupdocs_guid column to your mounted model:
 
     add_column :uploads, :groupdocs_guid, :string
 
+Optionally, you can store document thumbnails as it comes from GroupDocs in binary format (for displaying using Data URI technique):
+
+   add_column :uploads, :groupdocs_thumbnail, :text
+
 ## Usage
 
     CarrierWave.configure do |config|
